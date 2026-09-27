@@ -44,7 +44,7 @@ curl -L -o data/raw/indy_20161005_06.mat "https://zenodo.org/records/583331/file
 # 2) Binnear -> data/processed/indy_20161005_06_bin20ms.npz
 python -m icbench.data --bin-ms 20              # --no-include-hash para excluir la unidad 0
 
-# 3) PoC offline -> results/poc1_metrics.csv y results/poc1_trace.png
+# 3) PoC offline -> results/poc1_metrics.csv y docs/poc1_trace.png
 python scripts/poc1_offline.py
 ```
 
@@ -76,7 +76,7 @@ Se ponen en NaN un 5 % y un 20 % de los bins de test, elegidos al azar (semilla 
 
 Lectura: el Wiener **rinde más en limpio**, pero el Kalman **se degrada menos** cuando faltan bins, porque su estado absorbe los huecos. Esta es justamente la confusión entre "tipo de señal" y "decodificador con estado" que hay que declarar en la línea de fallas.
 
-![Velocidad real vs decodificada, extracto de 20 s](results/poc1_trace.png)
+![Velocidad real vs decodificada, extracto de 20 s](docs/poc1_trace.png)
 
 *(La figura se genera localmente en `results/`, que no se versiona.)*
 
