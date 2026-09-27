@@ -5,3 +5,4 @@ data/raw/
 results/
 *.pkl
 data/processed/
+*.egg-info/
